@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+} 
+.card-buttons{
+    display: flex;
+    flex-direction: row;
+}
+.card1{
+    margin-right: 10px;
+    border: 1px solid black !important;
+    color: black !important;
+    background-image: linear-gradient(aqua,rgb(200, 249, 255)) !important;
+    /* background-color: yellow !important; */
+    /* box-shadow: 1px 1px 10px black; */
+    transition-duration: 1s;
+
+}
+.card1:hover{
+    box-shadow: 5px 5px 10px black;
+}
+.bodyClass{
+    background-color:rgb(194, 253, 253);
+}
+.navbar{
+    background-color: rgb(230, 230, 238) !important;
+    border-bottom: 1px solid rgb(181, 180, 180)!important;
+}
+.iconss{
+    height:50 !important;
+    width:50px !important;
+    border-radius: 10px;
+}

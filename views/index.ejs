@@ -1,0 +1,33 @@
+<%layout("/layouts/boilerplate")%>
+
+<body>
+    <h1>Chats!</h1>
+    <div class="cards">
+        <%for(let chat of chats){%>
+            <div class="card text-center mb-3 card1" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">From : <%=chat.from%></h5>
+                  <p class="card-text"> <u><b><%=chat.msg%></b></u></p>
+                  <p class="card-text"><%=chat.created_at.toString().split(" ")[4]%>&nbsp;<%=chat.created_at.toString().split(" ").slice(0,4).join(" ")%></p>
+                  <p class="card-text">
+                    <div class="row">
+                        <%if(userInfo && userInfo._id.equals(chat.owner)){%>
+                        <form action="/chats/<%=chat._id%>/edit"method="get"class="col-4 offset-1">
+                            <button class="btn btn-warning">Edit</button>
+                        </form>
+                        <form action="/chats/<%=chat._id%>?_method=delete"method="post"class="col-4 offset-1">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                        <%}%>
+                        <!-- <form action="/chats/<%=chat._id%>"method="get"class="col-4">
+                            <button class="btn btn-info">Show</button>
+                        </form> -->
+                    </div>
+                </p>
+                <h5 class="card-title">To : <%=chat.to%></h5>
+                </div>
+            </div>
+        <%}%>
+    </div>
+</body>
+

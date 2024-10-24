@@ -1,0 +1,16 @@
+<%layout("/layouts/boilerplate")%>
+<body>
+    <div class="row mt-3">
+        <div class="col-6 offset-3">
+            <h2 class="edit-chats">Edit Chats!</h2>
+        <form action="/chats/<%=data._id%>?_method=patch"method="post"novalidate class="needs-validation">
+            <div class="mb-3">
+                <label for=""class="form-label">You are editing chats of <b><%=data.from%></b> to <b><%=data.to%></label>
+                <textarea name="msg" id=""class="form-control"required><%=data.msg%></textarea>
+                <div class="invalid-feedback">Please Enter Message</div>
+            </div>
+            <button class="btn btn-danger">Edit</button>
+        </form>
+        </div>
+    </div>
+</body>
